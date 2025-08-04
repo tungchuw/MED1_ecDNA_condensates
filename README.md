@@ -1,6 +1,6 @@
 
 ## Overview
-Code for analyses presented in Extrachromosomal DNA associates with nuclear condensates and reorganizes chromatin structures to enhance oncogenic transcription. [Paper link](https://www.biorxiv.org/content/10.1101/2024.09.17.613488v1.full).
+Code and data tables for analyses presented in Extrachromosomal DNA associates with nuclear condensates and reorganizes chromatin structures to enhance oncogenic transcription. [Paper link](https://www.biorxiv.org/content/10.1101/2024.09.17.613488v1.full).
 
 ## Data availability
 Processed data is also available at: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275060
