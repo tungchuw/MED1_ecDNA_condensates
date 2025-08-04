@@ -1,0 +1,75 @@
+
+This file explains how to use the data for plotting Fig 2B, C.
+
+1. File name: Fig.2B, C_PC3DM_DiffBind_output_for_plot.csv
+
+Description:
+This file contains the DiffBind (version 3.8.4) results for PC3 DM cells under 1,6 hexanediol (1,6-HD) treatment.
+It includes two comparisons:
+- 3% 1,6-HD for 30 minutes vs untreated control.
+- 3% 1,6-HD for 60 minutes vs untreated control.
+
+Each row represents a genomic peak with statistics, including fold change, p value and FDR for both comparisons.
+annotation columns  
+- EC == TRUE means the peak is on ecDNA; FALSE means it is on a chromosomal region. 
+- rankSE == 0 means the peak is not part of a super-enhancer (SE); a integer indicates its rank among SEs.
+
+How to generate data for PC3 DM in Fig 2B:
+Subset the file to include peaks with FDR less than 0.01 in each individual comparison.
+For 30 minute comparison keep rows where FDR 30min vs 0 is less than 0.01.
+For 60 minute comparison keep rows where FDR 60min vs 0 is less than 0.01.
+Use these two subsets for separate plotting.
+
+How to generate data for PC3 DM in Fig 2C:
+Create a union of peaks where FDR is less than 0.01 in at least one of the two comparisons.
+That is keep any row where either FDR 30min vs 0 is less than 0.01 or FDR 60min vs 0 is less than 0.01.
+
+##########################################
+
+2. File name: Fig.2B, C_COLO320DM_DiffBind_output_for_plot.csv
+
+Description:
+This file contains the DiffBind (version 3.8.4) results for COLO320 DM cells under 1,6 hexanediol (1,6-HD) treatment.
+It includes four comparisons:
+- 3% 1,6-HD for 30 minutes vs untreated control.
+- 3% 1,6-HD for 60 minutes vs untreated control.
+- 3% 1,6-HD for 120 minutes vs untreated control.
+- 3% 1,6-HD for 180 minutes vs untreated control.
+
+Each row represents a genomic peak with statistics, including fold change, p value and FDR for both comparisons.
+annotation columns  
+- EC == TRUE means the peak is on ecDNA; FALSE means it is on a chromosomal region. 
+- rankSE == 0 means the peak is not part of a super-enhancer (SE); a integer indicates its rank among SEs.
+
+How to generate data for COLO320 DM in Fig 2B:
+Subset the file to include peaks with FDR less than 0.01 in each individual comparison.
+For 30 minute comparison keep rows where FDR 30min vs 0 is less than 0.01.
+For 60 minute comparison keep rows where FDR 60min vs 0 is less than 0.01.
+For 120 minute comparison keep rows where FDR 120min vs 0 is less than 0.01.
+For 180 minute comparison keep rows where FDR 180min vs 0 is less than 0.01.
+Use these four subsets for separate plotting.
+
+How to generate data for COLO320 DM in Fig 2C:
+Create a union of peaks where FDR is less than 0.01 in at least one of the four comparisons.
+That is keep any row where either FDR 30min vs 0 is less than 0.01, FDR 60min vs 0 is less than 0.01, FDR 120min vs 0 is less than 0.01 or FDR 180min vs 0 is less than 0.01.
+
+##########################################
+
+2. File name: Fig.2B, C_GBM171DM_DiffBind_output_for_plot.csv
+
+Description:
+This file contains the DiffBind (version 3.8.4) results for GBM171 DM cells under 1,6 hexanediol (1,6-HD) treatment.
+It includes two comparisons:
+- 3% 1,6-HD for 60 minutes vs untreated control.
+- 3% 1,6-HD for 120 minutes vs untreated control.
+
+Each row represents a genomic peak with statistics, including fold change, p value and FDR for both comparisons.
+annotation columns  
+- EC == TRUE means the peak is on ecDNA; FALSE means it is on a chromosomal region. 
+- rankSE == 0 means the peak is not part of a super-enhancer (SE); a integer indicates its rank among SEs.
+
+How to generate data for GBM171 DM in Fig 2B:
+Subset the file to include peaks with FDR less than 0.01 in each individual comparison.
+For 60 minute comparison keep rows where FDR 60min vs 0 is less than 0.01.
+For 120 minute comparison keep rows where FDR 120min vs 0 is less than 0.01.
+Use these two subsets for separate plotting.
