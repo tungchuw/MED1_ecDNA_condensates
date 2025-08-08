@@ -7,7 +7,7 @@ library(pheatmap)
 library(ggrepel)
 
 cellname='PC3DM+'
-itxDir = "/net/nwgc/vol1/sharing/Wei_Lab/proj-SuperEnhancer/ChIA-PIPE/diffloop/" #modify accordingly
+itxDir = "./ChIA-PIPE/diffloop/" #modify accordingly
 samplePhenotype = read.table(paste0(itxDir,cellname, "_itxlist.txt")); 
 colnames(samplePhenotype) = c("name","condition", "rep") #modify
 celltreat <- sub('mock', '',paste(unique(samplePhenotype$condition), collapse='')) #mock must be in samplePhenotype
@@ -15,18 +15,18 @@ cellcntrl <- 'mock'
 compname <- paste0(celltreat, '_vs_', cellcntrl)
 nsample = nrow(samplePhenotype)
 
-bedtools='singularity run --bind /net/nwgc/vol1/nobackup/nocleanup/tungch/:/net/nwgc/vol1/nobackup/nocleanup/tungch/ /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools intersect -wo -a '
-bedmerge='singularity run --bind /net/nwgc/vol1/nobackup/nocleanup/tungch/:/net/nwgc/vol1/nobackup/nocleanup/tungch/ /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools merge -i '
-bedpetools='singularity run --bind /net/nwgc/vol1/nobackup/nocleanup/tungch/:/net/nwgc/vol1/nobackup/nocleanup/tungch/ /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools pairtopair -is -type both -a '
+bedtools='singularity run /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools intersect -wo -a '
+bedmerge='singularity run /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools merge -i '
+bedpetools='singularity run /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools pairtopair -is -type both -a '
 
 itxlibs = samplePhenotype$name;
 itxsuf='.DA.itx'
 
 #For annotation
 
-perlannot='/usr/bin/perl /net/nwgc/vol1/sharing/Wei_Lab/USERS/tungch/tjongh/ec/itxAnnotation.4peaks.pl'
-genebed='/net/nwgc/vol1/nobackup/nocleanup/tungch/proj-in-situ-chia-pet/annotation/hg38.Genes.itxAnnotation.bed'
-regiondir='/net/nwgc/vol1/nobackup/nocleanup/tungch/regions/'
+perlannot='/usr/bin/perl ./itxAnnotation.4peaks.pl'
+genebed='./hg38.Genes.itxAnnotation.bed'
+regiondir='./data/misc/PC3DM/'
 
 ecDNAfile=paste0(regiondir, cellname, '.ecDNA.bed')
 peakfile=paste0(regiondir, cellname, ".Pol2.narrowPeak")
