@@ -1,6 +1,6 @@
 #!/bin/bash
 export pref='B171.HD2.DiffBind'
-export bwdir='/./data/misc/GBM171DM/chipseq/'
+export bwdir='./data/misc/GBM171DM/chipseq/'
 export bwsuf='all_treat_pileup.bw'
 
 run1Mock=A0088
@@ -16,7 +16,7 @@ NTHREAD=8 #cpu usage per job
 
 ##########################################################################################
 maindir=$PWD
-regionDir=/./data/misc/GBM171DM/chipseq/
+regionDir=./data/misc/GBM171DM/chipseq/
 
 export extbp=1200
 export deeptools='singularity run ./singularity/deeptools_3.4.3.sif'
