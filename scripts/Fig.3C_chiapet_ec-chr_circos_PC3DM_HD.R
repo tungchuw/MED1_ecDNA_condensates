@@ -45,7 +45,7 @@ process_samples <- function(itxs,cell,group,min,max,max_color) {
 }
 
 #links for circos within ecDNA (ChIA-PET data)
-itx = read.table("/net/nwgc/vol1/nobackup/nocleanup/tungch/test/diffloop/trans_colo/ec_seperated_connected/normalized_byMean/SE_annotation_with_ec/PC3DM+.drug_vs_mock.diffDAitxTrans.chiapet_chr_basedOnChiadrop_gene.with_ec_anchors.ecSEannotated.tsv", stringsAsFactors=F, header = TRUE)
+itx = read.table("./PC3DM+.drug_vs_mock.diffDAitxTrans.chiapet_chr_basedOnChiadrop_gene.with_ec_anchors.ecSEannotated.tsv", stringsAsFactors=F, header = TRUE)
 
 # mock
 itx2 = itx[order(itx$norm_mock),]
