@@ -1,10 +1,3 @@
-#Draw ecDNA region ONLY circos with tracks:
-#1. Fragment counts chiadrop ec-chr barplots (rs3, fragdf type==ecTrans in proj-SuperEnhancer/chiadrop/*annotChiaDrop.ecPol2.RData)
-#   a=subset(fragdf, GEMtype=='ecTrans' & ecFrag==FALSE, select=c(frag, Nread))
-#2. sum fragments ec
-#3. MED1 profile
-#4. Super enhancer annotation
-#5. Gene names (just ticks and span)
 
 library(circlize)
 library(ComplexHeatmap)
@@ -38,7 +31,7 @@ bedmerge <- bedcmd("bedtools merge  -c 4 -o sum ")
 distiMerge <- bedcmd("bedtools merge -c 4 -o distinct ")
 bedsort <- bedcmd("bedtools sort -i")
 
-bwprog='/net/nwgc/vol1/home/tungch/miniconda3/envs/bigwig/bin/bigWigSummary' # version v357
+bwprog='./tungch/miniconda3/envs/bigwig/bin/bigWigSummary' # version v357
 ncolor = 5
 bordcol='#f5f5f5'
 
@@ -110,8 +103,8 @@ RUN='ACD0013'
 # RUN='ACD0035'
 
 #replace .ecFragPair.txt with output of: 
-chiadropDir='/net/nwgc/vol1/sharing/Wei_Lab/proj-SuperEnhancer/chiadrop/'
-chiapetDir='/net/nwgc/vol1/sharing/Wei_Lab/proj-SuperEnhancer/ChIA-PIPE/'
+chiadropDir='./chiadrop/'
+chiapetDir='./ChIA-PIPE/'
 
 run2names = c('PC3NCI60', 'PC3ATCC', 'COLO320DM','COLO320HSR', 'B168');#folder names /projects/wei-lab/proj-SuperEnhancer/ChIA-PIPE
 run2names = c(rep(run2names[1:2], each=4), rep(run2names[3:5], each=2),  run2names[5], run2names[5], 'B171','B171')
@@ -131,9 +124,9 @@ medlibs[["B168"]] = c('A0018')
 medlibs[["B171"]] = c('A0041')
 
 med1.bwfiles = medlibs[[seNames[run2names[RUN]]]]
-chipdir=paste0('/net/nwgc/vol1/sharing/Wei_Lab/proj-SuperEnhancer/1x51_chipseq_processed/',med1.bwfiles[1],'/')
+chipdir=paste0('./1x51_chipseq_processed/',med1.bwfiles[1],'/')
 bw1=paste0(chipdir,"fe_", med1.bwfiles[1], ".bw")
-bw2=paste0("/net/nwgc/vol1/sharing/Wei_Lab/proj-SuperEnhancer/1x51_chipseq_processed/A0015/normalized/fe_A0015.bw")
+bw2=paste0("./1x51_chipseq_processed/A0015/normalized/fe_A0015.bw")
  
 # Annotation files
 ecdnaRegfile <- file.path(cell_dir, paste0(seNames[run2names[RUN]], ".ecDNA.bed"))
