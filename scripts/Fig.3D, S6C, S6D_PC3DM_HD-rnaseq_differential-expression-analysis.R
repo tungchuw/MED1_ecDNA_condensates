@@ -9,7 +9,7 @@ projname='PC3DM+_HD2_RNAseq'
 names(conds) = runIDs
 
 rnaseqDir = "/projects/wei-lab/proj-SuperEnhancer/rnaseq/HDtreatment/PC3DM+/"
-tssbed='/projects/wei-lab/proj-in-situ-chia-pet/annotation/hg38.Genes.itxAnnotation.bed'
+tssbed='./hg38.Genes.itxAnnotation.bed'
 geneSet = '.gencode.v36.chialinPick'
 
 sampleFiles = paste0(runIDs, "/countGene/", runIDs, geneSet, '.htseqcount')
