@@ -18,7 +18,7 @@ NTHREAD=8 #cpu usage per job
 
 ##########################################################################################
 maindir=$PWD
-regionDir=/./data/misc/COLO320DM/chipseq
+regionDir=./data/misc/COLO320DM/chipseq
 
 export extbp=1200
 export deeptools='singularity run ./singularity/deeptools_3.4.3.sif'
