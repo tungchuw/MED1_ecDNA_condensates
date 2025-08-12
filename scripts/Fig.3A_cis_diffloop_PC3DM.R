@@ -15,9 +15,9 @@ cellcntrl <- 'mock'
 compname <- paste0(celltreat, '_vs_', cellcntrl)
 nsample = nrow(samplePhenotype)
 
-bedtools='singularity run /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools intersect -wo -a '
-bedmerge='singularity run /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools merge -i '
-bedpetools='singularity run /net/nwgc/vol1/nobackup/nocleanup/tungch/sifsh/chipseqtools.sif bedtools pairtopair -is -type both -a '
+bedtools='singularity run ./singularity/chipseqtools.sif bedtools intersect -wo -a '
+bedmerge='singularity run ./singularity/chipseqtools.sif bedtools merge -i '
+bedpetools='singularity run ./singularity/chipseqtools.sif bedtools pairtopair -is -type both -a '
 
 itxlibs = samplePhenotype$name;
 itxsuf='.DA.itx'
@@ -71,7 +71,7 @@ getAnchorIndex <- function(itx1, libID){
 
 #==============================
 #Reading itx.DA
-itxDir = "/net/nwgc/vol1/sharing/Wei_Lab/proj-SuperEnhancer/ChIA-PIPE/HDtreat/" #modify accordingly
+itxDir = "./ChIA-PIPE/HDtreat/" #modify accordingly
 itxs = list()
 for ( i in itxlibs ){
     f1 =  paste0(itxDir, i, "/", i, itxsuf)
