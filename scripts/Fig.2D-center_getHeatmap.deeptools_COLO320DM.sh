@@ -1,6 +1,6 @@
 #!/bin/bash
 export pref='COLO320DM.HD2.DiffBind'
-export bwdir='/./data/misc/COLO320DM/chipseq/'
+export bwdir='./data/misc/COLO320DM/chipseq/'
 export bwsuf='all_treat_pileup.bw'
 run1Mock=A0081
 run1HD30=A0077
