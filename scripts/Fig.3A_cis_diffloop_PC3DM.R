@@ -7,7 +7,7 @@ library(pheatmap)
 library(ggrepel)
 
 cellname='PC3DM+'
-itxDir = "./ChIA-PIPE/diffloop/" #modify accordingly
+itxDir = "./ChIA-PIPE/diffloop/"
 samplePhenotype = read.table(paste0(itxDir,cellname, "_itxlist.txt")); 
 colnames(samplePhenotype) = c("name","condition", "rep") #modify
 celltreat <- sub('mock', '',paste(unique(samplePhenotype$condition), collapse='')) #mock must be in samplePhenotype
